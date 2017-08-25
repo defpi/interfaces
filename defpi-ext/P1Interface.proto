@@ -1,0 +1,11 @@
+message P1Measurement{
+	required double EXPORT_LOW_KWH = 1;
+	required double IMPORT_NORMAL_KWH = 2;
+	required double IMPORT_LOW_KWH = 3;
+	// Should be ISO 8601 WITH timezone, e.g. 2017-08-25T07:59:23+00:00 or 2017-08-25T07:59:23Z
+	required string TIMESTAMP = 4;
+	required double GAS_USAGE_M3 = 5;
+	required double EXPORT_KW = 6;
+	required double EXPORT_NORMAL_KWH = 7;
+	required double IMPORT_KW = 8;
+}
