@@ -31,6 +31,7 @@ message Observation {
 			Gy   = 27; // gray; absorbed dose
 			Sv   = 28; // sievert; equivalent dose
 			kat  = 29; // katal; catalytic activity
+			m3   = 30; // volume; cubic meters
 		}
 		required string name = 1;
 		required double value = 2;
