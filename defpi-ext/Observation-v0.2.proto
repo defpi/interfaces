@@ -49,7 +49,7 @@ message Observation {
 	// Timstamp of the observation; must be ISO 8601 WITH timezone, e.g. 2017-08-25T07:59:23+00:00 or 2017-08-25T07:59:23Z
 	required string observedAt = 3;
 	// Timstamp of the measurement (could be different from the observation time); must be ISO 8601 WITH timezone, e.g. 2017-08-25T07:59:23+00:00 or 2017-08-25T07:59:23Z
-	optional string measuredAt = 4
+	optional string measuredAt = 4;
 	// List of datapoints represented by a number
 	repeated NumberDatapoint numberDatapoints = 5;
 	// List of datapoints represented by a string
