@@ -11,7 +11,7 @@ message Observation {
 			cd   = 7;  // candela; luminous intensity
 			rad  = 8;  // radian; anle
 			sr   = 9;  // steradian; solid angle
-			Hz   = 10;  // hertz; frequency
+			Hz   = 10; // hertz; frequency
 			N    = 11; // newton; force, weight
 			Pa   = 12; // palcal; pressure, stress
 			J    = 13; // joule; energy, work, heat
@@ -31,15 +31,19 @@ message Observation {
 			Gy   = 27; // gray; absorbed dose
 			Sv   = 28; // sievert; equivalent dose
 			kat  = 29; // katal; catalytic activity
-			m3   = 30; // volume; cubic meters
+			m3   = 30; // volume; cubic metersa
 		}
 		required string name = 1;
 		required double value = 2;
 		required Unit unit = 3;
+		// This should be set to true if you want to use this valua as index in a databese
+		required bool indexed = 4 [default = false];
 	}
 	message StringDatapoint {
 		required string name = 1;
 		required string value = 2;
+		// This should be set to true if you want to use this valua as index in a databese
+		required bool indexed = 3 [default = false];
 	}
 
 	// Identifier of the dEF-Pi process
@@ -47,9 +51,11 @@ message Observation {
 	// Identifier which is unique for the dEF-Pi process
 	required string observerId = 2;
 	// Timstamp of the observation; must be ISO 8601 WITH timezone, e.g. 2017-08-25T07:59:23+00:00 or 2017-08-25T07:59:23Z
-	required string timestamp = 3;
+	required string observedAt = 3;
+	// Timstamp of the measurement (could be different from the observation time); must be ISO 8601 WITH timezone, e.g. 2017-08-25T07:59:23+00:00 or 2017-08-25T07:59:23Z
+	optional string measuredAt = 4;
 	// List of datapoints represented by a number
-	repeated NumberDatapoint numberDatapoints = 4;
-	// List of datapoints rprestented by a string
-	repeated StringDatapoint stringDatapoints = 5;
+	repeated NumberDatapoint numberDatapoints = 5;
+	// List of datapoints represented by a string
+	repeated StringDatapoint stringDatapoints = 6;
 }
