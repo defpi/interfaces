@@ -37,13 +37,13 @@ message Observation {
 		required double value = 2;
 		required Unit unit = 3;
 		// This should be set to true if you want to use this value as index in a databese
-		required bool indexed = 4 [default = false];
+		optional bool indexed = 4 [default = false];
 	}
 	message StringDatapoint {
 		required string name = 1;
 		required string value = 2;
 		// This should be set to true if you want to use this value as index in a databese
-		required bool indexed = 3 [default = false];
+		optional bool indexed = 3 [default = false];
 	}
 
 	// Identifier of the dEF-Pi process
