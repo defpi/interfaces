@@ -54,8 +54,10 @@ message Observation {
 	required string observedAt = 3;
 	// Timstamp of the measurement (could be different from the observation time); must be ISO 8601 WITH timezone, e.g. 2017-08-25T07:59:23+00:00 or 2017-08-25T07:59:23Z
 	optional string measuredAt = 4;
+	// Observation type. Provides some information about the type of observation. For example can be used as metadata for writing to a database.
+	optional string observationType = 5;
 	// List of datapoints represented by a number
-	repeated NumberDatapoint numberDatapoints = 5;
+	repeated NumberDatapoint numberDatapoints = 6;
 	// List of datapoints represented by a string
-	repeated StringDatapoint stringDatapoints = 6;
+	repeated StringDatapoint stringDatapoints = 7;
 }
