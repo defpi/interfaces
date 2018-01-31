@@ -1,4 +1,8 @@
-// This file is similar to HTTP, but exclusively used for widgetsh
+// This file is similar to HTTP, but exclusively used for widgets. In addition it also has a WidgetInfo message to transmit the title of the widget.
+
+message WidgetInfo {
+	required string title = 1;
+}
 
 message WidgetHTTPRequest {
 	enum Method {
