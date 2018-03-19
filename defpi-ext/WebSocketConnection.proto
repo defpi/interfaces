@@ -1,0 +1,23 @@
+// Message sent by the WebSocket Server to get connection information from the proxy.
+message WebSocketConnectionInfoRequest {
+}
+
+// Response from the proxy to the WebSocket Server.
+message WebSocketConnectionInfo {
+	required string resourceId = 1;
+	required string type = 2;
+	required bool connected = 3;
+	optional string basicAuthUsername = 4;
+	optional string basicAuthPassword = 5;
+}
+
+// Message containing a text message sent through the WebSocket. Can be sent by both the server and the proxy.
+message WebSocketTextFrame {
+	required string contents = 1;
+}
+
+
+// Message containing a binary message sent through the WebSocket. Can be sent by both the server and the proxy.
+message WebSocketBinaryFrame {
+	required bytes contents = 1;
+}
