@@ -4,11 +4,29 @@ message WebSocketConnectionInfoRequest {
 
 // Response from the proxy to the WebSocket Server.
 message WebSocketConnectionInfo {
+	// Resource ID (used in the URL of the websocket endpoint)
 	required string resourceId = 1;
+	// Type of the connection on the dEF-Pi side in human readable form
 	required string type = 2;
-	required bool connected = 3;
-	optional string basicAuthUsername = 4;
-	optional string basicAuthPassword = 5;
+	// Human readable description of the connection
+	optional stirng label = 3;
+	// Indicates if the proxy is connected to the defpi service 
+	required bool defpiConnectionConnected = 4;
+	// When basic auth is required, the username
+	optional string basicAuthUsername = 5;
+	// When basic auth is required, the password
+	optional string basicAuthPassword = 6;
+}
+
+// Message sent by the proxy to request status information of the connection.
+message WebSocketStatusRequest {
+}
+
+// Message sent by the server to the proxy with information about the status of the connection.
+message WebSocketStatus {
+	required bool connected = 1;
+	optional int closedStatusCode = 2;
+	optional string closedReason = 2;
 }
 
 // Message containing a text message sent through the WebSocket. Can be sent by both the server and the proxy.
@@ -16,8 +34,9 @@ message WebSocketTextFrame {
 	required string contents = 1;
 }
 
-
 // Message containing a binary message sent through the WebSocket. Can be sent by both the server and the proxy.
 message WebSocketBinaryFrame {
 	required bytes contents = 1;
 }
+
+
