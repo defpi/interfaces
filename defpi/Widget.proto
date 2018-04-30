@@ -1,7 +1,13 @@
-// This file is similar to HTTP, but exclusively used for widgets. In addition it also has a WidgetInfo message to transmit the title of the widget.
+// This file is similar to HTTP, but exclusively used for widgets. In addition it also has a WidgetInfo message to transmit the title and type of the widget.
 
 message WidgetInfo {
+	enum WidgetType {
+		SMALL_WIDGET = 0;
+		FULL_WIDGET = 1;
+		PAGE = 2;
+	}
 	required string title = 1;
+	required WidgetType type = 2;
 }
 
 message WidgetHTTPRequest {
