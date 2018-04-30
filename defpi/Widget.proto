@@ -8,6 +8,7 @@ message WidgetInfo {
 	}
 	required string title = 1;
 	required WidgetType type = 2;
+	optional string id = 3;
 }
 
 message WidgetHTTPRequest {
