@@ -1,11 +1,23 @@
 message P1Measurement{
-	required double EXPORT_LOW_KWH = 1;
+	// Should be ISO 8601 WITH timezone, e.g. 2017-08-25T07:59:23+00:00 or 2017-08-25T07:59:23Z
+	required string TIMESTAMP = 1;
 	required double IMPORT_NORMAL_KWH = 2;
 	required double IMPORT_LOW_KWH = 3;
-	// Should be ISO 8601 WITH timezone, e.g. 2017-08-25T07:59:23+00:00 or 2017-08-25T07:59:23Z
-	required string TIMESTAMP = 4;
-	required double GAS_USAGE_M3 = 5;
-	required double EXPORT_KW = 6;
-	required double EXPORT_NORMAL_KWH = 7;
-	required double IMPORT_KW = 8;
+	required double EXPORT_NORMAL_KWH = 4;
+	required double EXPORT_LOW_KWH = 5;
+	required double IMPORT_KW = 6;
+	required double EXPORT_KW = 7;
+	optional double VOLTAGE_L1_V = 8;
+	optional double VOLTAGE_L2_V = 9;
+	optional double VOLTAGE_L3_V = 10;
+	optional double CURRENT_L1_A = 11;
+	optional double CURRENT_L2_A = 12;
+	optional double CURRENT_L3_A = 13;
+	optional double IMPORT_L1_KW = 14;
+	optional double IMPORT_L2_KW = 15;
+	optional double IMPORT_L3_KW = 16;
+	optional double EXPORT_L1_KW = 17;
+	optional double EXPORT_L2_KW = 18;
+	optional double EXPORT_L3_KW = 19;
+	optional double GAS_USAGE_M3 = 20;
 }
